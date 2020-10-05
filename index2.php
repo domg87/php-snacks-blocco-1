@@ -7,21 +7,22 @@ Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” 
 
 
 <?php
-   
+   //variabile
     $name = isset($_GET["name"]);
-
+    // controlliamo se il nome abbia una lunghezza uguale o maggiore di 3 caratteri
     if(strlen($name) >= 3) {
         $name = "Accesso riuscito!!";
     } 
     
 
     $email = isset($_GET["email"]);
-
+    // controlliamo se nell'inserimenrto dei dati, la email contenga @ o "."
     if(!strpos($email, "@") || !strpos($email, ".")) {
         $email = "Accesso negato!!";
     } 
-    $age = isset($_GET["age"]);
 
+    $age = isset($_GET["age"]);
+    // controlliamo se l'eta sia un numero
     if(is_numeric($age)) {
         $age = "Accesso negato!!";
     }
